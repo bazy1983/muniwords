@@ -1,0 +1,39 @@
+body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 0px 25px;
+}
+
+.landing-page {
+  display: flex;
+  flex-direction: column;
+}
+
+.left,
+.right {
+  width: 100%;
+  padding: 20px;
+  /* border: 1px solid silver */
+}
+
+.label {
+  width: 100px;
+  display: inline-block;
+}
+
+@media (min-width: 768px) {
+  .landing-page {
+    flex-direction: row;
+    width: 100vw;
+  }
+
+  .left {
+    width: 50%;
+  }
+
+  .right {
+    width: 50%;
+  }
+}
