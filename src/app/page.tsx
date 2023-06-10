@@ -53,12 +53,13 @@ const LandingPage = () => {
       answerRef.current?.focus()
       return;
     }
+    const payload = {...formData, guess: formData.guess.toLowerCase()}
     const resp = await fetch('/api/add', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
       },
-      body: JSON.stringify(formData),
+      body: JSON.stringify(payload),
     })
     const data = await resp.json()
     // console.log(data)
