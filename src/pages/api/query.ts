@@ -8,7 +8,7 @@ export interface IRequest extends Request {
 }
 
 const handler = async (req: IRequest, res: IResponse) => {
-  // console.log(req.query)
+  console.log(req.query)
   const query = req.query;
   // console.log(query)
   await run(req.method as Method, query, (output)=>{

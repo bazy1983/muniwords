@@ -20,13 +20,19 @@ export async function run(method: Method, payload: Record<string, string>, cb: (
         const collection: Collection = db.collection('game');
         switch (method) {
             case 'GET':
-                const getCursor = await collection.find(payload);
-                const documents = await getCursor.toArray()
-                console.log('>>>', documents)
-                cb(documents) ;
+                if(payload?.get ==='count'){
+                    console.log('hello')
+                    const count  = await collection.countDocuments()
+                    cb([{count}])
+                } else {
+                    const getCursor = await collection.find(payload);
+                    const documents = await getCursor.toArray()
+                    // console.log('>>>', documents)
+                    cb(documents) ;
+                }
                 break;
             case 'POST':
-                const doc = await collection.findOne({guess: payload.guess});
+                const doc = await collection.findOne({guess: {$regex : payload.guess}});
                 console.log('')
                 if(!doc){
                     await collection.insertOne(payload)

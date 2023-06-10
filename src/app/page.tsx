@@ -32,11 +32,11 @@ const LandingPage = () => {
 
   React.useEffect(()=>{
     if(!formData.guess){
-      fetch('/api/query?' + new URLSearchParams({}))
+      fetch('/api/query?' + new URLSearchParams({get: 'count'}))
       .then(resp => resp.json())
       .then(data => {
-        console.log(data)
-        setCount(data.length || 0)
+        console.log(data[0].count)
+        setCount(data[0].count || 0)
       })
     }
   }, [formData.guess])
