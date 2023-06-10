@@ -93,7 +93,7 @@ const LandingPage = () => {
                 <h4>Rules</h4>
                 <ul>
                   <li>Please type in your name as it appears on your Facebook account.</li>
-                  <li>In the answer field, type in a Munimade term. It could be a one-word term like "tray" or a multi-word term like "color-changing tray."</li>
+                  <li>In the answer field, type in a Munimade term. It could be a one-word term like &quot;tray&quot; or a multi-word term like &quot;color-changing tray.&quot;</li>
                   <li>If the answer has already been used, you will receive a rejection notice.</li>
                   <li>Any answer that is not Munimade-related will be disqualified, even if it is successfully submitted.</li>
                   <li>To win the game, your record must be the last qualified record taken in the database.</li>
